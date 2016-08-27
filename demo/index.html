@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Individual Checkboxes</title>
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css"/>
+    <style>
+        .individual-checkboxes, .individual-checkboxes * {
+            box-sizing: border-box;
+        }
+        
+        .individual-checkboxes {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .individual-checkboxes input[type="checkbox"], .individual-checkboxes input[type="radio"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 20px;
+            z-index: 2;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .individual-checkboxes input[type="checkbox"] + div, .individual-checkboxes input[type="radio"] + div {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        .individual-checkboxes input[type="checkbox"] + div + label, .individual-checkboxes input[type="radio"] + div + label {
+            cursor: pointer;
+        }
+        
+        .individual-checkboxes input[type="checkbox"] + div {
+            border-radius: 4px;
+        }
+        
+        .individual-checkboxes input[type="radio"] + div {
+            border-radius: 50%;
+        }
+        
+        .background input:checked + div {
+            background-color: black;
+        }
+        
+        .border input:checked + div {
+            border: 3px dotted red;
+        }
+        
+        .icon input:not(:checked) + div .fa {
+            font-size: 18px;
+        }
+        
+        .icon input:not(:checked) + div .fa {
+            display: none;
+        }
+        
+        .fill input + div span {
+            display: inline-block;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            position: relative;
+            top: 1px;
+        }
+        
+        .fill input:checked + div span {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Pure CSS</h1>
+    </header>
+    
+    <section>
+        <header>
+            <h2>Just change the color to show checked status</h2>
+            <p>You could change the background- or border-color</p>
+        </header>
+        
+        <div class="individual-checkboxes background">
+            <input type="checkbox" id="checkboxPureCSS"/>
+            <div></div>
+            <label for="checkboxPureCSS">This checkbox is styled only with CSS! Also default for checkboxes.</label>
+        </div>
+        
+        <div class="individual-checkboxes background">
+            <input type="radio" id="radioPureCSS-1" name="radioPureCSS"/>
+            <div></div>
+            <label for="radioPureCSS-1">This radio is styled only with CSS! Also default for radios.</label>
+        </div>
+        
+        <div class="individual-checkboxes border">
+            <input type="radio" id="radioPureCSS-2" name="radioPureCSS"/>
+            <div></div>
+            <label for="radioPureCSS-2">Pure CSS here too!</label>
+        </div>
+        
+        <div class="individual-checkboxes fill">
+            <input type="radio" id="radioPureCSS-3" name="radioPureCSS"/>
+            <div><span></span></div>
+            <label for="radioPureCSS-3">This radio too!</label>
+        </div>
+    </section>
+    
+    <section>
+        <header>
+            <h2>Or use an icon</h2>
+            <p>For example, <a href="http://fontawesome.io/" target="_blank" rel="noreferrer nofollow">Font Awesome</a>
+                or
+                <a href="http://getbootstrap.com/components/">Bootstrap</a>
+            </p>
+            <small>Neither Font Awesome nor Bootstrap are included.</small>
+        </header>
+        
+        <div class="individual-checkboxes icon">
+            <input type="checkbox" id="checkboxPureCSSWithIcon"/>
+            <div><i class="fa fa-check" aria-hidden="true"></i></div>
+            <label for="checkboxPureCSSWithIcon">This checkbox is styled only with CSS!</label>
+        </div>
+    </section>
+</section>
+</body>
+</html>
