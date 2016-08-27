@@ -1,0 +1,93 @@
+.individual-checkboxes, .individual-checkboxes * {
+    box-sizing: border-box;
+}
+
+.individual-checkboxes {
+    position: relative;
+    display: inline-block;
+    
+    input {
+        &[type="checkbox"], &[type="radio"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 20px;
+            z-index: 2;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            
+            & + div {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: {
+                    color: white;
+                }
+            ;
+                border: {
+                    width: 1px;
+                    style: solid;
+                    color: black;
+                }
+            ;
+                vertical-align: middle;
+                text: {
+                    align: center;
+                }
+            ;
+                
+                & + label {
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        &[type="checkbox"] {
+            & + div {
+                border: {
+                    radius: 4px;
+                }
+            ;
+            }
+            
+            &:checked {
+                & + div {
+                    background: {
+                        color: black;
+                    }
+                }
+            }
+        }
+        
+        &[type="radio"] {
+            & + div {
+                border: {
+                    radius: 50%;
+                }
+            ;
+            }
+            
+            &:checked {
+                & + div {
+                    span {
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        position: relative;
+                        top: 1px;
+                        border: {
+                            radius: 50%;
+                        }
+                    ;
+                        background: {
+                            color: black;
+                        }
+                    ;
+                    }
+                }
+            }
+        }
+    }
+}
